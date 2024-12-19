@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moving Validation Form</title>
+    <link rel="stylesheet" href="style.css?v=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+    <!-- Firebase SDK -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
+        import { getDatabase } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-database.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyB_WNyUJstYIeb3K56PfV2kzyptYXTz5B0",
+            authDomain: "birthday-advice-form.firebaseapp.com",
+            databaseURL: "https://birthday-advice-form-default-rtdb.firebaseio.com",
+            projectId: "birthday-advice-form",
+            storageBucket: "birthday-advice-form.firebasestorage.app",
+            messagingSenderId: "25668512901",
+            appId: "1:25668512901:web:54d8175655b002e9b78dec",
+            measurementId: "G-DGQJDVJGSJ"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+
+        window.firebaseDatabase = database; // Expose the database globally
+    </script>
+</head>
+<body>
+    <form id="form" autocomplete="off">
+        <h3 id="title">Please Fill this Form</h3>
+        <label for="name">Your Name</label>
+        <input type="text" name="name" id="name" placeholder="Adarsh Baghel">
+
+        <label for="advise">Best life <b>advice</b> you want to give -</label>
+        <input type="text" name="advise" id="advise" placeholder="Ex: Become wise like me (ok but how!?)">
+
+        <button type="submit" id="submit">Submit :)</button>
+    </form>
+
+    <script src="script.js?v=1.0" type="module"></script>
+</body>
+</html>
